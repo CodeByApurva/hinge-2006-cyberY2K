@@ -31,7 +31,7 @@ export default function App() {
     <ThemeProvider>
       <AuthProvider>
         <AppProvider>
-          <BrowserRouter>
+          <HashRouter>
             <Routes>
               {/* Guest Routes */}
               <Route 
@@ -64,7 +64,7 @@ export default function App() {
               {/* Catch-all Redirect */}
               <Route path="*" element={<Navigate to="/" replace />} />
             </Routes>
-          </BrowserRouter>
+          </HashRouter>
         </AppProvider>
       </AuthProvider>
     </ThemeProvider>
