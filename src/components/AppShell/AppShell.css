@@ -1,0 +1,455 @@
+/* ============================================
+   APP SHELL — Cyber-Y2K Operating System Chrome
+   Floating glass modules over a holographic void.
+   ============================================ */
+
+/* ---- App Shell Container ---- */
+.app-shell {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+}
+
+/* ---- Title Bar — brushed chrome console strip ---- */
+.titlebar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 32px;
+  min-height: 32px;
+  background: linear-gradient(180deg,
+    var(--titlebar-gradient-end) 0%,
+    var(--titlebar-gradient-start) 100%);
+  border-bottom: 1px solid rgba(35,231,255,0.22);
+  box-shadow: 0 1px 0 rgba(255,255,255,0.05) inset, 0 4px 16px rgba(0,0,0,0.35);
+  padding: 0 8px;
+  user-select: none;
+  cursor: default;
+}
+
+.titlebar__left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+  min-width: 0;
+}
+
+.titlebar__icon {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.titlebar__text {
+  color: var(--titlebar-text);
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  text-shadow: 0 0 10px rgba(35,231,255,0.4);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.titlebar__center {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-shrink: 0;
+}
+
+.titlebar__clock {
+  color: var(--cy-ice);
+  font-size: 11px;
+  font-family: 'Rajdhani', monospace;
+  letter-spacing: 0.5px;
+}
+
+.titlebar__theme-badge {
+  color: var(--cy-cyan);
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  background: rgba(35,231,255,0.10);
+  border: 1px solid rgba(35,231,255,0.3);
+  padding: 2px 10px;
+  border-radius: 20px;
+}
+
+.titlebar__controls {
+  display: flex;
+  gap: 4px;
+  flex-shrink: 0;
+  margin-left: 10px;
+}
+
+.titlebar__btn {
+  width: 22px;
+  height: 22px;
+  border: 1px solid rgba(120,190,255,0.28);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 10px;
+  color: var(--cy-ice);
+  padding: 0;
+  line-height: 1;
+}
+
+.titlebar__btn--minimize,
+.titlebar__btn--maximize {
+  background: linear-gradient(180deg, rgba(120,190,255,0.16) 0%, rgba(30,55,85,0.4) 100%);
+}
+
+.titlebar__btn--minimize:hover,
+.titlebar__btn--maximize:hover {
+  background: linear-gradient(180deg, rgba(120,190,255,0.28) 0%, rgba(30,55,85,0.6) 100%);
+  box-shadow: 0 0 10px rgba(35,231,255,0.35);
+}
+
+.titlebar__btn--close {
+  background: linear-gradient(180deg, #FF7A93 0%, #C22E4C 100%);
+  border-color: rgba(255,255,255,0.35);
+}
+
+.titlebar__btn--close:hover {
+  filter: brightness(1.15);
+  box-shadow: 0 0 10px rgba(255,92,122,0.5);
+}
+
+/* ---- Toolbar — glass instrument / address strip ---- */
+.toolbar {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  min-height: 40px;
+  background: linear-gradient(180deg, var(--toolbar-bg-start) 0%, var(--toolbar-bg-end) 100%);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border-bottom: 1px solid var(--toolbar-border);
+  padding: 0 8px;
+  gap: 4px;
+}
+
+.toolbar__left {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  flex-shrink: 0;
+}
+
+.toolbar__nav-btn {
+  font-size: 12px !important;
+  padding: 4px 10px !important;
+}
+
+.toolbar__separator {
+  width: 1px;
+  height: 20px;
+  background: linear-gradient(180deg, transparent, var(--toolbar-border), transparent);
+  margin: 0 6px;
+}
+
+.toolbar__address {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  min-width: 0;
+  margin: 0 10px;
+  gap: 6px;
+}
+
+.toolbar__address-label {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: var(--text-muted);
+  flex-shrink: 0;
+  text-transform: uppercase;
+}
+
+.toolbar__address-bar {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(6,14,26,0.65);
+  border: 1px solid rgba(35,231,255,0.2);
+  border-radius: 7px;
+  padding: 3px 10px;
+  font-size: 12px;
+  min-width: 0;
+  height: 24px;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.4);
+}
+
+.toolbar__address-icon {
+  font-size: 12px;
+  flex-shrink: 0;
+}
+
+.toolbar__address-text {
+  color: var(--cy-cyan);
+  font-family: 'Rajdhani', monospace;
+  font-size: 12px;
+  letter-spacing: 0.3px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-shadow: 0 0 6px rgba(35,231,255,0.4);
+}
+
+.toolbar__right {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  flex-shrink: 0;
+}
+
+/* ---- Sidebar — floating glass module rail ---- */
+.sidebar {
+  width: 208px;
+  min-width: 208px;
+  background: var(--sidebar-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border-right: 1px solid var(--panel-border);
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.sidebar__profile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 12px;
+  background: linear-gradient(180deg, rgba(35,231,255,0.08) 0%, transparent 100%);
+  border-bottom: 1px solid rgba(120,190,255,0.1);
+}
+
+.sidebar__profile-info {
+  min-width: 0;
+}
+
+.sidebar__profile-name {
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.3px;
+  color: var(--cy-ice);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.sidebar__profile-status {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-top: 3px;
+  text-transform: capitalize;
+}
+
+.sidebar__nav {
+  flex: 1;
+}
+
+.sidebar__nav-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 12px 6px;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  background: none;
+  text-shadow: none;
+  cursor: default;
+}
+
+.sidebar__nav-header-icon {
+  font-size: 12px;
+}
+
+.sidebar__nav-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 12px;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  color: var(--sidebar-text);
+  text-decoration: none;
+  cursor: pointer;
+  border-left: 2px solid transparent;
+  transition: background 160ms ease, color 160ms ease, border-color 160ms ease;
+  margin: 0 6px;
+  border-radius: 8px;
+  width: calc(100% - 12px);
+}
+
+.sidebar__nav-item:hover {
+  background: var(--sidebar-item-hover);
+  color: var(--cy-ice);
+}
+
+.sidebar__nav-item--active {
+  background: var(--sidebar-item-active);
+  color: var(--sidebar-text-active);
+  border-left-color: var(--cy-cyan);
+  font-weight: 700;
+  box-shadow: 0 0 16px -4px rgba(35,231,255,0.4) inset;
+}
+
+.sidebar__nav-item--active:hover {
+  background: var(--sidebar-item-active);
+  color: var(--sidebar-text-active);
+}
+
+.sidebar__nav-icon {
+  font-size: 14px;
+  width: 18px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.sidebar__nav-label {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.sidebar__nav-badge {
+  margin-left: auto;
+  background: linear-gradient(180deg, #FF7A93, #C22E4C);
+  color: white;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 1px 6px;
+  border-radius: 8px;
+  min-width: 16px;
+  text-align: center;
+  box-shadow: 0 0 8px rgba(255,92,122,0.5);
+}
+
+.sidebar__section {
+  margin-top: 6px;
+}
+
+.sidebar__notifications {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  margin: 4px 6px;
+  border-radius: 8px;
+  background: rgba(255,92,122,0.1);
+  border: 1px solid rgba(255,92,122,0.3);
+  font-size: 11px;
+  color: #FF95AA;
+  font-weight: 600;
+  animation: pulse 2s ease infinite;
+}
+
+.sidebar__notif-icon {
+  font-size: 14px;
+}
+
+.sidebar__footer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  margin-top: auto;
+  border-top: 1px solid var(--panel-border);
+  font-size: 10px;
+  color: var(--text-muted);
+}
+
+.sidebar__footer-logo {
+  flex-shrink: 0;
+  filter: drop-shadow(0 0 6px rgba(35,231,255,0.5));
+}
+
+.sidebar__footer-text {
+  font-family: 'Rajdhani', sans-serif;
+  font-style: normal;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+}
+
+/* ---- Content Area ---- */
+.app-shell__body {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+.app-shell__content {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background: var(--content-bg);
+  padding: 0;
+  position: relative;
+}
+
+/* ---- Status Bar — glass telemetry strip ---- */
+.statusbar {
+  display: flex;
+  align-items: center;
+  height: 26px;
+  min-height: 26px;
+  background: var(--statusbar-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border-top: 1px solid var(--statusbar-border);
+  padding: 0 10px;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.3px;
+  color: var(--statusbar-text);
+  gap: 0;
+}
+
+.statusbar__section {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 0 14px;
+  border-right: 1px solid var(--statusbar-border);
+  height: 100%;
+  white-space: nowrap;
+}
+
+.statusbar__section:last-child {
+  border-right: none;
+}
+
+.statusbar__section--main {
+  flex: 1;
+}
+
+.statusbar__section--user {
+  font-weight: 700;
+  color: var(--cy-ice);
+}

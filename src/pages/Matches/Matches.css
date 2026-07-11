@@ -1,0 +1,167 @@
+.matches-page {
+  padding: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.messenger-window {
+  width: 420px;
+  max-width: 100%;
+  border-width: 1px;
+  box-shadow: var(--shadow-window);
+}
+
+.messenger-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(180deg, var(--titlebar-gradient-end) 0%, var(--titlebar-gradient-start) 100%) !important;
+  color: var(--cy-ice) !important;
+  border-bottom: 1px solid rgba(35,231,255,0.25) !important;
+}
+
+.messenger-header__brand {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+}
+
+.messenger-header__stats {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 11px;
+  background: rgba(35,231,255,0.14);
+  border: 1px solid rgba(35,231,255,0.25);
+  padding: 2px 9px;
+  border-radius: 10px;
+  color: var(--cy-cyan);
+}
+
+.messenger-body {
+  padding: 0 !important;
+  background: rgba(6,14,26,0.35);
+  min-height: 380px;
+  max-height: 500px;
+  overflow-y: auto;
+}
+
+.messenger-buddies-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.buddy-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.buddy-group-header {
+  background: rgba(31,58,92,0.4);
+  padding: 7px 14px;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: var(--cy-sky);
+  border-bottom: 1px solid var(--panel-border);
+  cursor: pointer;
+  user-select: none;
+}
+
+.buddy-group-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.empty-group-text {
+  padding: 14px;
+  font-size: 11px;
+  color: var(--text-muted);
+  font-style: normal;
+  text-align: center;
+}
+
+.buddy-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 14px;
+  border-bottom: 1px solid rgba(120,190,255,0.08);
+  cursor: pointer;
+  background: transparent;
+  transition: background 160ms ease;
+}
+
+.buddy-row:hover {
+  background: rgba(47,123,255,0.1);
+}
+
+.buddy-row--offline {
+  opacity: 0.55;
+}
+
+.buddy-info {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.buddy-name-row {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.buddy-name {
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 700;
+  font-size: 12.5px;
+  color: var(--cy-ice);
+}
+
+.buddy-age {
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.buddy-status-message {
+  font-size: 11px;
+  color: var(--text-secondary);
+  margin-top: 2px;
+}
+
+.send-msg-btn {
+  font-size: 11px !important;
+  padding: 3px 10px !important;
+  min-height: 22px !important;
+}
+
+.messenger-footer {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  background: rgba(9,17,30,0.6) !important;
+  border-top: 1px solid var(--panel-border) !important;
+  padding: 8px 12px !important;
+}
+
+.footer-search {
+  flex: 1;
+  height: 26px;
+  font-size: 11.5px;
+}
+
+.no-matches-view {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 350px;
+}

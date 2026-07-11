@@ -1,0 +1,232 @@
+.discover-page {
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.discover-header {
+  flex-shrink: 0;
+}
+
+.discover-search-row {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.search-input {
+  flex: 1;
+  height: 30px;
+}
+
+.discover-content {
+  display: flex;
+  gap: 18px;
+  flex: 1;
+  min-height: 0;
+}
+
+.discover-sidebar {
+  width: 230px;
+  min-width: 230px;
+  height: fit-content;
+}
+
+.filters-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.form-group-filter {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.form-group-filter label {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  color: var(--text-secondary);
+}
+
+.age-inputs {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.age-val {
+  width: 52px;
+  text-align: center;
+  height: 26px;
+}
+
+.discover-grid-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.results-summary {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+  padding: 0 4px;
+  letter-spacing: 0.2px;
+}
+
+.discover-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 14px;
+  flex: 1;
+}
+
+.profile-grid-card {
+  height: 224px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.profile-grid-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-panel), 0 0 24px -6px rgba(35,231,255,0.35);
+}
+
+.profile-grid-card .xp-panel__header {
+  font-size: 11.5px;
+}
+
+.card-layout {
+  display: flex;
+  gap: 10px;
+  padding: 12px;
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+  background: rgba(6,14,26,0.28);
+}
+
+.card-media {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 70px;
+  flex-shrink: 0;
+}
+
+.online-tag {
+  font-size: 9px !important;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.card-info {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-primary-info {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--cy-ice);
+}
+
+.card-job {
+  font-size: 11px;
+  color: var(--text-secondary);
+  font-weight: 600;
+  margin-top: 2px;
+}
+
+.card-goal {
+  font-size: 10px;
+  color: var(--cy-cyan);
+  margin-top: 2px;
+  letter-spacing: 0.3px;
+}
+
+.card-bio-short {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-top: 7px;
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.card-footer-actions {
+  display: flex;
+  border-top: 1px solid var(--panel-border);
+  padding: 7px;
+  gap: 4px;
+  background: var(--panel-bg);
+  justify-content: space-between;
+}
+
+.card-footer-actions button {
+  flex: 1;
+  padding: 3px 4px !important;
+  font-size: 11px !important;
+}
+
+/* Pagination Styles */
+.pagination-toolbar {
+  flex-shrink: 0;
+}
+
+.paginator-body {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 14px !important;
+  background: linear-gradient(180deg, rgba(31,58,92,0.5) 0%, rgba(10,20,36,0.5) 100%);
+}
+
+.page-numbers {
+  display: flex;
+  gap: 4px;
+}
+
+.page-num-btn {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 3px 10px;
+  background: rgba(10,20,36,0.6);
+  border: 1px solid var(--panel-border);
+  border-radius: 6px;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 160ms ease;
+}
+
+.page-num-btn:hover {
+  background: rgba(47,123,255,0.16);
+  color: var(--cy-ice);
+  border-color: rgba(35,231,255,0.35);
+}
+
+.page-num-btn.active {
+  background: linear-gradient(180deg, var(--cy-sky), var(--cy-azure));
+  color: #04101E;
+  border-color: rgba(255,255,255,0.4);
+  font-weight: 700;
+  box-shadow: 0 0 14px -2px rgba(47,123,255,0.6);
+}
+
+.no-results-panel {
+  width: 100%;
+}
